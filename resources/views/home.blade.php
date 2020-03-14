@@ -14,11 +14,15 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap&subset=latin-ext');
+    </style> 
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styleGuest.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -29,7 +33,7 @@
                 <h3 style="margin-top: 1em;">Andrzej Nogala</h3>
                 <p>
                     Witaj na mojej stronie.
-                    To miejsce jest jeszcze w budowie, ale niedługo powinno wyglądać lepiej :)
+                    To miejsce jest jeszcze w budowie, ale niedługo będzie wyglądać lepiej :)
                 </p>
             </div>
 

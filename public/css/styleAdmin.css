@@ -1,0 +1,28 @@
+body, html{
+    background-color: #eee;
+    color: black;
+}
+
+#nav{
+    color: #eee;
+    background-color: black;
+    height: 100vh;
+}
+
+a{
+    color: #aaa;
+}
+
+.container{
+    margin: 0;
+    padding:0;
+}
+
+.nav-link{
+    transition: background-color .5s, color .5s ease-in-out;
+}
+
+.nav-link:hover{
+    background-color: #eee;
+    color: black;
+}

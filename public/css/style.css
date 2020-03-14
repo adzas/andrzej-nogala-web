@@ -1,4 +1,18 @@
-body, html{
+html, body{
+    font-family: 'Lobster', cursive;
+}
+
+#logo{
+    font-size: 64px;
+    letter-spacing: 5px;
+}
+
+#logo > a:hover{
+    text-decoration: none;
     color: white;
-    background-color: black;
+}
+
+.invalid-feedback{
+    font-weight: 400 !important;
+    font-size: 13px !important;
 }
