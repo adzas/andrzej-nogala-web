@@ -28,16 +28,27 @@
     <div id="app">
         <main class="container">
             
-            <div style="text-align: center">
-                <img width="300" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
-                <h3 style="margin-top: 1em;">Andrzej Nogala</h3>
-                <p>
-                    Witaj na mojej stronie.
-                    To miejsce jest jeszcze w budowie, ale niedługo będzie wyglądać lepiej :)
-                </p>
+            <div class="row">
+                <div class="col-md-12">
+                    <img class="myPicture" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="titleSection">Andrzej Nogala</h3>
+                    <p class="contentSection">
+                        <a href="#" class="nav-my-link" data-where="about">O mnie</a>
+                        <span class="separator"> | </span>
+                        <a href="#" class="nav-my-link" data-where="gallery">Galeria</a>
+                        <span class="separator"> | </span>
+                        <a href="#" class="nav-my-link" data-where="contact">Kontakt</a>
+                    </p>
+                </div>
             </div>
 
         </main>
     </div>
+    <!-- My Scripts -->
+    <script src="{{ asset('js/script.js') }}" defer></script>
 </body>
 </html>

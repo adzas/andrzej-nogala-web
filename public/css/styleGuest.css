@@ -2,3 +2,76 @@ body, html{
     color: white;
     background-color: black;
 }
+
+.container{
+    text-align: center;
+}
+
+.myPicture{
+    margin-top: 100px;
+    width: 200px;
+}
+
+.titleSection{
+    font-size: 24px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.contentSection{
+    font-size: 18px;
+}
+
+.separator{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.nav-my-link{
+    color: #eee;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: background-color .5s;
+}
+
+.nav-my-link:hover{
+    color: black;
+    text-decoration: none;
+    background-color: #eee;
+}
+
+@media(min-width: 768px)
+{
+    .myPicture{
+        margin-top: 50px;
+        width: 250px;
+    }
+    
+    .contentSection{
+        font-size: 24px;
+    }
+    
+    .titleSection{
+        font-size: 32px;
+    }
+}
+
+@media(min-width: 1024px)
+{
+    .myPicture{
+        margin-top: 40px;
+        width: 270px;
+    }
+    
+    .nav-my-link{
+        padding-right: 1.5em;
+        padding-left: 1.5em;
+        padding-top: 5px;
+    }
+    
+    .titleSection{
+        font-size: 40px;
+    }
+}
