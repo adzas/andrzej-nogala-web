@@ -28,23 +28,24 @@
     <div id="app">
         <main class="container">
             
-            <div class="row">
-                <div class="col-md-12">
-                    <img class="myPicture" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="titleSection">Andrzej Nogala</h3>
-                    <p class="contentSection">
-                        <a href="#" class="nav-my-link" data-where="about">O mnie</a>
-                        <span class="separator"> | </span>
-                        <a href="#" class="nav-my-link" data-where="gallery">Galeria</a>
-                        <span class="separator"> | </span>
-                        <a href="#" class="nav-my-link" data-where="contact">Kontakt</a>
-                    </p>
-                </div>
-            </div>
+            <img class="myPicture" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
+    
+            <h3 class="titleSection"></h3>
+
+            <p class="navbar">
+                <a href="#" class="navbarlinks" data-where="about">O mnie</a>
+                <span class="separator"> | </span>
+                <a href="#" class="navbarlinks" data-where="gallery">Galeria</a>
+                <span class="separator"> | </span>
+                <a href="#" class="navbarlinks" data-where="contact">Kontakt</a>
+            </p>
+
+            <p class="contentSection d-none">
+                Elementum hendrerit sollicitudin felis lacus scelerisque proin elit cursus erat
+                felis ipsum sit a nec suspendisse scelerisque felis 
+                tortor euismod leo fusce tempus sed nulla.
+            </p>
+            
 
         </main>
     </div>
