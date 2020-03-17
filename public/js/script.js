@@ -9,29 +9,14 @@ function NavItem(html){
     this.name = html;
 }
 
+function pullTop(element, values) {
+    const top = $(element).css('top');
+    const change = parseInt(top) + parseInt((values[1]));
+    $(element).css(values[0], change);
+}
+
 $(function(){
-
-    const title = 'Andrzej Nogala';
-    const navbar = [
-        'O mnie',
-        'Galeria',
-        'Kontakt'
-    ];
-
-    $.each(navbar, (k, v) => {
-        console.log($('.nav-my-link'));
-        if(k == 0)
-            $('.nav-my-link').first().html(v);
-        else
-            $('.nav-my-link').parent().next('.nav-my-link').html(v);
-    })
-
-    $('.titleSection').html(title);
-
-    $('.nav-my-link').click(function() {
-        console.log($(this).html());
-        const title = $(this).html();
-        $('.titleSection').html(title);
-        $('.contentSection').html('O mnie');
-    });
+    const top = $('.titleSection').css('top');
+    console.log(top);
 });
+
