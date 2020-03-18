@@ -12,9 +12,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        DB::table('abouts')->insert([
-            'title' => 'O mnie',
-            'description' => 'Lorem ipsum',
+        $this->call([
+            AboutsTableSeeder::class,
+            UserTableSeeder::class,
+            ContactTableSeeder::class,
         ]);
+
+        /* DB::table('galleries')->insert([
+            'name' => 'Ania <3 (moja żona)',
+            'file_name' => 'https://www.instagram.com/p/Bpxibv8g-e8/',
+            'alt' => 'Rysunek kobiety, długopisem',
+            'description' => 'Rysunek długopisem.',
+        ]); */
     }
 }

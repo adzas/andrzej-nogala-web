@@ -20,7 +20,9 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('pictures.index');
+        $pictures = Gallery::all();
+        //dd($pictures);
+        return view('pictures.index')->with('pictures', $pictures);
         //$gallery = Gallery::latest()->get();
         //return view('pictures.index')->with('pictures', $gallery);
     }
