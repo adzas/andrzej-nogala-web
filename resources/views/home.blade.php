@@ -28,16 +28,18 @@
     <div id="app">
         <main class="container">
             
-            <img class="myPicture d-none" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
+            <img class="myPicture" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
     
-            <h3 class="titleSection" onclick="pullTop('.titleSection', ['top',100])">Andrzej Nogala</h3>
+            <h3 class="titleSection" onclick="moveTitle()">
+                Andrzej Nogala
+            </h3>
 
-            <p class="navbar d-none">
-                <a href="#" class="navbarlinks" data-where="about">O mnie</a>
+            <p class="navbar">
+                <a href="#" onclick="changeContent('about')" class="navbarlinks">O mnie</a>
                 <span class="separator"> | </span>
-                <a href="#" class="navbarlinks" data-where="gallery">Galeria</a>
+                <a href="#" onclick="changeContent('gallery')" class="navbarlinks">Galeria</a>
                 <span class="separator"> | </span>
-                <a href="#" class="navbarlinks" data-where="contact">Kontakt</a>
+                <a href="#" onclick="changeContent('contact')" class="navbarlinks">Kontakt</a>
             </p>
 
             <p class="contentSection d-none">

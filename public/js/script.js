@@ -1,22 +1,46 @@
 
-const title = {
-    top: 0,
-    left: 0,
-    html: '',
-};
 
 function NavItem(html){
     this.name = html;
 }
 
-function pullTop(element, values) {
-    const top = $(element).css('top');
-    const change = parseInt(top) + parseInt((values[1]));
-    $(element).css(values[0], change);
-}
+  
+const App = {
+    title: {
+        id: $('.titleSection'),
+        moveDown: function(){
+            const top = this.id.css('top');
+            const change = parseInt(top) + parseInt((100));
+            this.id.css('top', change);
+            this.id.attr('onclick', 'changeContent(\'home\')');
+        },
+    },
+    picture:{
+        id: $('.myPicture'),
+        show: function(){
+            this.id.css('opacity', 1);
+        }
+    },
+    navbar:{
+        id: $('.navbar'),
+        show: function(){
+            this.id.css('opacity', 1);
+        }
+    }
+};
 
 $(function(){
-    const top = $('.titleSection').css('top');
-    console.log(top);
+    moveTitle();
 });
 
+function moveTitle() {
+    App.title.moveDown();
+    App.picture.show();
+    App.navbar.show();
+}
+
+function changeContent(param) {
+    $.post('ajax.php', {param}, (result) => {
+        console.log(result);
+    }, 'json');
+}

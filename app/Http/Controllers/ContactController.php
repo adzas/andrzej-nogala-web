@@ -26,18 +26,18 @@ class ContactController extends Controller
 
     public function show()
     {
-        return 'test';
+        return 'show';
     }
 
 
     public function index()
     {
-        return 'echo';
+        return 'index';
     }
 
 
     public function store()
     {
-        return 'test';
+        return 'store';
     }
 }
