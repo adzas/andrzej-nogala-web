@@ -43,7 +43,7 @@
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ action('GalleryController@index') }}">Galeria</a>
+                            <a class="nav-link" href="{{ action('PictureController@index') }}">Galeria</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ action('AboutController@edit', 1) }}">O mnie</a>
