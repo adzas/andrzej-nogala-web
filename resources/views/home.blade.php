@@ -19,6 +19,9 @@
         @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap&subset=latin-ext');
     </style> 
 
+    <!-- ajax -->
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -28,6 +31,7 @@
     <div id="app">
         <main class="container">
             
+            <img class="mySmallPicture" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
             <img class="myPicture" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
     
             <h3 class="titleSection" onclick="moveTitle()">
@@ -35,14 +39,14 @@
             </h3>
 
             <p class="navbar">
-                <a href="#" onclick="changeContent('about')" class="navbarlinks">O mnie</a>
+                <a href="#" onclick="changeContent('about')" data-content="about" class="navbarlinks">O mnie</a>
                 <span class="separator"> | </span>
-                <a href="#" onclick="changeContent('gallery')" class="navbarlinks">Galeria</a>
+                <a href="#" onclick="changeContent('gallery')" data-content="gallery" class="navbarlinks">Galeria</a>
                 <span class="separator"> | </span>
-                <a href="#" onclick="changeContent('contact')" class="navbarlinks">Kontakt</a>
+                <a href="#" onclick="changeContent('contact')" data-content="contact" class="navbarlinks">Kontakt</a>
             </p>
 
-            <p class="contentSection d-none">
+            <p class="contentSection">
                 Elementum hendrerit sollicitudin felis lacus scelerisque proin elit cursus erat
                 felis ipsum sit a nec suspendisse scelerisque felis 
                 tortor euismod leo fusce tempus sed nulla.

@@ -15,6 +15,8 @@ Route::get('/admin', 'AdminController@home');
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::post('/ajax', 'AjaxController@index');
+
 Route::resource('gallery','GalleryController');
 Route::resource('about','AboutController');
 Route::resource('contact','ContactController');

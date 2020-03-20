@@ -21,16 +21,43 @@ const App = {
             this.id.css('opacity', 1);
         }
     },
+    pictureSmall:{
+        id: $('.mySmallPicture'),
+    },
     navbar:{
         id: $('.navbar'),
         show: function(){
             this.id.css('opacity', 1);
         }
-    }
+    },
+    contentId:  $('.contentSection'),
+    content: function(html){
+        this.contentId.removeClass('d-none').html(html);
+    },
+    pushTopAll: function(){
+        this.title.id.css({
+            'top': '150px',
+            'font-size': '32px',
+        });
+        this.contentId.css({
+            'top': '250px',
+            'opacity': '1',
+        });
+        this.navbar.id.css({
+            'top': '190px',
+            'font-size': '16px',
+        });
+        this.picture.id.css('opacity', 0);
+        this.pictureSmall.id.css('opacity', 1);
+    },
+    selectNavbarLink: function(param){
+        $('.navbarlinks').css('text-decoration', 'none');
+        $('.navbarlinks[data-content="'+param+'"]').css('text-decoration', 'underline');
+    },
 };
 
 $(function(){
-    moveTitle();
+    //moveTitle();
 });
 
 function moveTitle() {
@@ -40,7 +67,19 @@ function moveTitle() {
 }
 
 function changeContent(param) {
-    $.post('ajax.php', {param}, (result) => {
-        console.log(result);
-    }, 'json');
+    App.selectNavbarLink(param);
+    $.ajax({
+        url: 'ajax',
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: {
+            param,
+        },
+        success: function(result) {
+            App.pushTopAll();
+            App.content(result);
+        }
+     });
 }
