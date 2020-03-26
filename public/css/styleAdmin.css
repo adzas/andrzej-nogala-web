@@ -9,6 +9,12 @@ body, html{
     height: 100vh;
 }
 
+@media(max-width: 768px){
+    #nav{
+        height: 100%;
+    }
+}
+
 a{
     color: #aaa;
 }
@@ -31,9 +37,8 @@ a{
     display: block;
     width: 100px;
     height: 100px;
-    border: 3px solid black;
-    background-color: #888;
-    padding-top: 0px;
+    background-color: black;
+    padding-top: 2px;
     text-align: center;
     font-size: 55px;
     font-family: Cambria;
@@ -45,6 +50,43 @@ a{
 .addPicture:hover{
     color: #fff;
     background-color: #999;
-    border-color: #333;
     text-decoration: none;
+}
+
+
+/* 
+ * galeria
+*/
+.myPicture{
+    display: block;
+    opacity: .7;
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.myPicture:hover{
+    opacity: 1;
+}
+
+/* 
+ * panel edycji wpisu
+*/
+.pictureBox{
+    margin: 50px 0 0 50px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.pictureBox > img {
+    margin-left: 0;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }

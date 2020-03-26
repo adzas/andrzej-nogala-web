@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 
 class Picture extends Model
@@ -12,4 +13,10 @@ class Picture extends Model
         'alt',
         'description',
     ];
+
+
+    public function getFileLink($pre = '')
+    {
+        return $pre . 'storage/app/' . $this->file;
+    }
 }

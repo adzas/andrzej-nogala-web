@@ -11,15 +11,19 @@
 
 <div class="row">
     <div class="col-md-12">
-        <a href="{{ action('PictureController@create') }}" class="addPicture" >
+        <a href="{{ action('PictureController@create') }}" class="addPicture m-1 float-left" >
             +
         </a>
+
+        @foreach ($pictures as $picture)
+            <a
+                href="{{ action('PictureController@show', $picture->id) }}"
+                class='myPicture m-1 float-left'
+                id="pictureId{{ $picture->id }}" 
+                style="background-image: url('../storage/app/{{ $picture->file }}')"
+            ></a>
+        @endforeach
     </div>
 </div>
-{{-- <div class="row">
-    <div class="col-md-8">
-        {!! Form::open('method' => 'PATCH', 'action' => ['GalleryController@update', $gallery]) !!}
-    </div>
-</div> --}}
 
 @endsection

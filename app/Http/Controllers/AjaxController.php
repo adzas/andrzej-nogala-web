@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\About;
 use App\Contact;
-use App\Gallery;
+use App\Picture;
 use Illuminate\Http\Request;
 
 class AjaxController extends Controller
@@ -21,7 +21,8 @@ class AjaxController extends Controller
                 return view('ajaxViews.contact')->with('contact', $contact);
 
             case 'gallery':
-                return view('ajaxViews.gallery')->with('gallery', $content['param']);
+                $pictures = Picture::take(9)->get();
+                return view('ajaxViews.gallery')->with('pictures', $pictures);
             
             default:
                 return '';
