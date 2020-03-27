@@ -9,6 +9,8 @@
     </div>
 </div>
 
+<input type="text" class="datepicker">
+
 <div class="row">
     <div class="col-md-8">
 

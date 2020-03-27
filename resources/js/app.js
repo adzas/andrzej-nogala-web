@@ -30,3 +30,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+// resources/js/app.js
+
+import $ from 'jquery';
+window.$ = window.jQeury = $;
+
+import 'jquery-ui/ui/widgets/sortable.js';
+
+$('#sortable').sortable();
