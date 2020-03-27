@@ -57,7 +57,7 @@ const App = {
 };
 
 $(function(){
-    //moveTitle();
+
 });
 
 function moveTitle() {
