@@ -6,18 +6,24 @@
         <h1>
             Kategorie obrazów
         </h1>
+        <p>
+            Ustaw kolejność wyświetlania.
+        </p>
     </div>
 </div>
 
-<input type="text" class="datepicker">
+<label>
+    ilość zmian: <input type="number" id="counterChanges">
+</label>
 
 <div class="row">
     <div class="col-md-8">
 
         <ul id="sortable">
+            <li class="sortable-item cancelselector">First</li>
         @foreach ($categories as $category)
 
-            <li class="ui-state-default">{{ $category->name }}</li>
+            <li class="sortable-item ">{{ $category->name }}</li>
 
         @endforeach
         </ul>

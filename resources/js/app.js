@@ -38,4 +38,4 @@ window.$ = window.jQeury = $;
 
 import 'jquery-ui/ui/widgets/sortable.js';
 
-$('#sortable').sortable();
+//$('#sortable').sortable();

@@ -90,3 +90,26 @@ a{
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
+
+/* 
+ * panel kategorii
+*/
+.sortable-item {
+    padding: 5px;
+    list-style-type: none;
+    border: 1px solid grey;
+    margin-top: 5px;
+    text-align: center;
+    background-color: #ccc;
+}
+
+.move-sortable-item {
+    padding: 5px;
+    list-style-type: none;
+    border: 1px solid grey;
+    margin-top: 5px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
