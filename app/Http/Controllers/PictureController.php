@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Session;
+use App\Category;
 use App\Picture;
 use App\Http\Controllers\FileController;
 use Illuminate\Http\Request;
@@ -34,8 +35,9 @@ class PictureController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::select('name', 'id')->orderBy('order')->get();
         $picture = Picture::find($id);
-        return view('pictures.edit')->with('picture', $picture);
+        return view('pictures.edit', compact('picture', 'categories'));
     }
     
     /**
@@ -44,12 +46,13 @@ class PictureController extends Controller
     public function store(CreatePictureRequest $request)
     {
         $path = FileController::store($request);
-        Picture::create([
-            'name' => $request->input('name'), 
-            'file' => $path,
-            'alt' => $request->input('alt'),
-            'description' => $request->input('description'),
-            ]);
+        $picture = new Picture;
+        $picture->name = $request->input('name');
+        $picture->file = $path;
+        $picture->alt = $request->input('alt');
+        $picture->description = $request->input('description');
+        $categoryList = $request->input('categories');
+        $picture->categories()->attach($categoryList);
         $pictures = Picture::all();
         return view('pictures.index')->with('pictures', $pictures);
     }
@@ -65,9 +68,10 @@ class PictureController extends Controller
         $picture->alt = $request->input('alt');
         $picture->description = $request->input('description');
         $picture->save();
+        $categoryList = $request->input('categories');
+        $picture->categories()->sync($categoryList);
         Session::flash('result_edit_picture', 'Poprawnie zaktualizowano dane');
         return redirect(url("pictures/{$picture->id}/edit"));
-        //return view('pictures.show')->with('picture', $picture);
     }
     
     public function show($id)

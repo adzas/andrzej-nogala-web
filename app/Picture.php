@@ -12,11 +12,18 @@ class Picture extends Model
         'file',
         'alt',
         'description',
+        'categories',
     ];
 
 
     public function getFileLink($pre = '')
     {
         return $pre . 'storage/app/' . $this->file;
+    }
+
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\Category', 'picture_category', 'pictures_id', 'category_id');
     }
 }

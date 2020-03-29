@@ -15,14 +15,18 @@
             +
         </a>
 
+        <ul id="sortableHorizontal">
         @foreach ($pictures as $picture)
-            <a
-                href="{{ action('PictureController@show', $picture->id) }}"
-                class='myPicture m-1 float-left'
-                id="pictureId{{ $picture->id }}" 
-                style="background-image: url('../storage/app/{{ $picture->file }}')"
-            ></a>
+            <li class="sortable-item-horizontal">
+                <a
+                    href="{{ action('PictureController@show', $picture->id) }}"
+                    class='myPicture m-1 float-left'
+                    id="pictureId{{ $picture->id }}" 
+                    style="background-image: url('../storage/app/{{ $picture->file }}')"
+                ></a>
+            </li>
         @endforeach
+        </ul>
     </div>
 </div>
 

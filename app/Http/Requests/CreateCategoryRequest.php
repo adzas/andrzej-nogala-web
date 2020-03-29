@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePictureRequest extends FormRequest
+class CreateCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +25,6 @@ class CreatePictureRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'file' => 'required|file',
-            'alt' => 'required',
-            'description' => '',
-            'categories' => '',
         ];
     }
 }

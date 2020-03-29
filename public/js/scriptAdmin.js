@@ -9,9 +9,10 @@ $(function(){
             classes: {
                 "ui-sortable-helper": 'move-sortable-item'
             },
-            distance: 28,
-    });
-
-
-    console.log(appendTo);
+        });
+        
+    var sortableHirozontal = $('#sortableHorizontal').sortable({
+        axis: "x",
+        appendTo: $('.sortable-item'),
+    })
 })

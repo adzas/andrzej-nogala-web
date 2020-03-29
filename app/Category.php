@@ -10,4 +10,9 @@ class Category extends Model
         'name',
         'order',
     ];
+
+    public function pictures()
+    {
+        return $this->belongsToMany('App\Picture', 'picture_category', 'pictures_id', 'category_id');
+    }
 }

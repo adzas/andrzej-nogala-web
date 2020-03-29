@@ -17,9 +17,11 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::post('/ajax', 'AjaxController@index');
 
-Route::resource('pictures','PictureController')->middleware('auth');;
-Route::resource('about','AboutController')->middleware('auth');;
-Route::resource('contact','ContactController')->middleware('auth');;
-Route::resource('category','CategoryController')->middleware('auth');;
+Route::resource('pictures','PictureController')->middleware('auth');
+Route::resource('about','AboutController')->middleware('auth');
+Route::resource('contact','ContactController')->middleware('auth');
+Route::resource('categories','CategoryController')->middleware('auth');
+Route::patch('category','CategoryController@orderUpdate')->middleware('auth');
+Route::patch('category/{id}/edit','CategoryController@updateSwitch')->middleware('auth');
 
 Auth::routes();

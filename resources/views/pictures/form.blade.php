@@ -36,6 +36,19 @@
         </div>
 
         <div class="row">
+            <div class="col-md-4 text-center text-md-right">
+                {!! Form::label('Kategorie') !!}
+            </div>
+            <div class="col-md-6">
+                {!! Form::select('categories[]', $categories->pluck('name', 'id'), null, [
+                    'multiple' => 'multiple',
+                    'style' => 'width: 100%',
+                    'size' => 6,
+                ]) !!}
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-6">
                 {!! Form::submit($buttonText) !!}

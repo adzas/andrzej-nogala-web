@@ -33,6 +33,10 @@ a{
     color: black;
 }
 
+.nav-item {
+    list-style-type: none;
+}
+
 .addPicture{
     display: block;
     width: 100px;
@@ -95,21 +99,44 @@ a{
 /* 
  * panel kategorii
 */
-.sortable-item {
-    padding: 5px;
-    list-style-type: none;
-    border: 1px solid grey;
-    margin-top: 5px;
-    text-align: center;
-    background-color: #ccc;
+.move-sortable-item {
+    background-color: #999 !important;
+    color: #333;
 }
 
-.move-sortable-item {
+.sortable-item {
     padding: 5px;
-    list-style-type: none;
     border: 1px solid grey;
     margin-top: 5px;
+    background-color: #ccc;
     text-align: center;
-    background-color: black;
-    color: white;
+    list-style-type: none;
+}
+
+.sortable-item > a {
+    color: #333;
+}
+
+.sortable-item:hover > a {
+    text-decoration: none;
+    color: black;
+}
+
+.editText{
+    color: #eee;
+    margin-right: -70px;
+    float: right;
+}
+
+.sortable-item:hover > a > .editText{
+    color: black;
+}
+
+
+/**
+ * Sortable horizontal
+ */
+ .sortable-item-horizontal {
+    list-style-type: none;
+    float:left;
 }
