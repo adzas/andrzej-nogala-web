@@ -29,9 +29,8 @@
 </head>
 <body>
     <div id="app">
-        <main class="container">
+        <main class="container-fluid">
             
-            <img class="mySmallPicture" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
             <img class="myPicture" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
     
             <h3 class="titleSection" onclick="moveTitle()">
@@ -47,9 +46,7 @@
             </p>
 
             <p class="contentSection">
-                Elementum hendrerit sollicitudin felis lacus scelerisque proin elit cursus erat
-                felis ipsum sit a nec suspendisse scelerisque felis 
-                tortor euismod leo fusce tempus sed nulla.
+                ...
             </p>
             
 
