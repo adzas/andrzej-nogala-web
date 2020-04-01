@@ -27,7 +27,8 @@ class PictureController extends Controller
      */
     public function create()
     {
-        return view('pictures.create');
+        $categories = Category::select('name', 'id')->orderBy('order')->get();
+        return view('pictures.create')->with('categories', $categories);;
     }
 
     /**
