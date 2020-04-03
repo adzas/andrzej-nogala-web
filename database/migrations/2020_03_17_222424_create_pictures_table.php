@@ -19,6 +19,7 @@ class CreatePicturesTable extends Migration
             $table->string('file');
             $table->string('alt');
             $table->text('description')->nullable();
+            $table->integer('order');
             $table->timestamps();
         });
     }

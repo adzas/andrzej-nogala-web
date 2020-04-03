@@ -1,5 +1,6 @@
 
         <div class="row">
+            {!! Form::hidden('order', 0) !!}
             <div class="col-md-4 text-center text-md-right col-xs-2">
                 {!! Form::label('Zdjęcie') !!}
             </div>
