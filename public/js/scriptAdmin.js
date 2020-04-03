@@ -11,8 +11,19 @@ $(function(){
             },
         });
         
-    var sortableHirozontal = $('#sortableHorizontal').sortable({
-        axis: "x",
+    var sortableHorizontal = $('#sortableHorizontal').sortable({
+        /* axis: "x", */
         appendTo: $('.sortable-item'),
-    })
+        update: function() {
+            var k = 0;
+            const order = [];
+            $('.sortable-item-horizontal').each(function(){
+                order[k] = $(this).attr('data-id');
+                k++;
+            });
+            /**
+             * Skrypt wysyłający dane do bazy przez ajax
+             */
+        }
+    });
 })

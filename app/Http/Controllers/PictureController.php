@@ -18,7 +18,7 @@ class PictureController extends Controller
      */
     public function index()
     {
-        $pictures = Picture::all();
+        $pictures = Picture::select('file', 'id')->orderBy('order')->get();
         return view('pictures.index')->with('pictures', $pictures);
     }
 
@@ -28,7 +28,7 @@ class PictureController extends Controller
     public function create()
     {
         $categories = Category::select('name', 'id')->orderBy('order')->get();
-        return view('pictures.create')->with('categories', $categories);;
+        return view('pictures.create')->with('categories', $categories);
     }
 
     /**
@@ -49,9 +49,11 @@ class PictureController extends Controller
         $path = FileController::store($request);
         $picture = new Picture;
         $picture->name = $request->input('name');
+        $picture->order = $request->input('order');
         $picture->file = $path;
         $picture->alt = $request->input('alt');
         $picture->description = $request->input('description');
+        $picture->save();
         $categoryList = $request->input('categories');
         $picture->categories()->attach($categoryList);
         $pictures = Picture::all();
@@ -85,5 +87,7 @@ class PictureController extends Controller
     {
         $picture = Picture::find($id);
         $picture->delete();
+        Session::flash('result_picture_remove', 'Usunięto zdjęcie');
+        return redirect('pictures');
     }
 }

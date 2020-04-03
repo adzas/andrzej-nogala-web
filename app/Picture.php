@@ -13,6 +13,7 @@ class Picture extends Model
         'alt',
         'description',
         'categories',
+        'order',
     ];
 
 
