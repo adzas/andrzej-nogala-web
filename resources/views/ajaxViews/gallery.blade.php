@@ -1,5 +1,4 @@
 
-
     <div class="row">
         <div class="col-12 mb-4">
             @foreach ($categories as $category)
@@ -22,7 +21,13 @@
         </div>
         @foreach ($pictures as $img)
             <div class="col-sm-3 pb-5 text-center">
-                <img class="pictures" src="{{ $img->getFileLink('../') }}" alt="{{ $img->alt }}" />
+                <img 
+                    id="img-{{ $img->id }}"
+                    class="pictures" 
+                    src="{{ $img->getFileLink('../') }}" 
+                    alt="{{ $img->alt }}" 
+                    onclick="showModal({{ $img->id }})"
+                />
             </div>
         @endforeach
     </div>

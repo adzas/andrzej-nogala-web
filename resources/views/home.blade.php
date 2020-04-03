@@ -49,6 +49,30 @@
                 ...
             </p>
             
+    
+            {{-- Modal --}}
+            <div class="pictureModal" onclick="hiddenModal()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="contentImg">
+                            {{-- <img class='img' src="../storage/app/example/5lFDomRaOXgLmyL46NDIbi1koyQ62S5MDsAfk9CM.jpeg"> --}}
+                            <img class='img' src="">
+                            {{-- style="background-image: url(../storage/app/example/5lFDomRaOXgLmyL46NDIbi1koyQ62S5MDsAfk9CM.jpeg)" --}} 
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="modalDescription">
+                            <h6 class="pictureTitle">Tytuł obrazka</h6>
+                            <p class="pictureDescription">Opis obrazka coś tam trzeba napisać i wyświetlić. No trudno.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
 
         </main>
     </div>

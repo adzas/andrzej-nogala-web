@@ -37,6 +37,31 @@ const App = {
             $('.category[data-id="'+id+'"]').addClass('activ');
         }
     },
+    modal:{
+        id: $('.pictureModal'),
+        show: function(id){
+
+            const src = $('#img-' + id).attr('src');
+            const alt = $('#img-' + id).attr('alt');
+            console.log(src);
+
+            this.id.find('.img')
+                /* .css('background-image', 'url("' + src + '")') */
+                .attr('src', src)
+                .css('padding', '50px 10px 10px 10px');
+                
+                this.id.css('z-index', '100');
+            },
+        hidden: function(){
+                
+            this.id.find('.img')
+                /* .css('background-image', '') */
+                .attr('src', '')
+                .css('padding', '1000px');
+
+            this.id.css('z-index', '-100');
+        }
+    },
     contentId:  $('.contentSection'),
     content: function(html){
         this.contentId.removeClass('d-none').html(html);
@@ -68,13 +93,24 @@ const App = {
 };
 
 $(function(){
-
+    App.title.moveDown();
+    App.picture.show();
+    App.navbar.show();
+    changeContent('gallery');
 });
 
 function moveTitle() {
     App.title.moveDown();
     App.picture.show();
-    setTimeout(App.navbar.show(), 10000);
+    App.navbar.show();
+}
+
+function hiddenModal() {
+    App.modal.hidden();
+}
+
+function showModal(id) {
+    App.modal.show(id);
 }
 
 function changeContent(param, id=null) {
