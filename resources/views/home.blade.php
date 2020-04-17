@@ -15,9 +15,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap&subset=latin-ext');
-    </style> 
+    {{-- Search in https://fontawesome.com/v4.7.0/icons/ --}}
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
     <!-- ajax -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -29,16 +28,15 @@
 </head>
 <body>
     <div id="app">
-        <main class="container">
+        <main class="container-fluid">
             
-            <img class="mySmallPicture" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
             <img class="myPicture" src="{{ asset('img/profil.jpg') }}" alt="Andrzej Nogala Picture" />
     
             <h3 class="titleSection" onclick="moveTitle()">
                 Andrzej Nogala
             </h3>
 
-            <p class="navbar">
+            <p class="navbar max-500">
                 <a href="#" onclick="changeContent('about')" data-content="about" class="navbarlinks">O mnie</a>
                 <span class="separator"> | </span>
                 <a href="#" onclick="changeContent('gallery')" data-content="gallery" class="navbarlinks">Galeria</a>
@@ -47,10 +45,30 @@
             </p>
 
             <p class="contentSection">
-                Elementum hendrerit sollicitudin felis lacus scelerisque proin elit cursus erat
-                felis ipsum sit a nec suspendisse scelerisque felis 
-                tortor euismod leo fusce tempus sed nulla.
+                ...
             </p>
+            
+    
+            {{-- Modal --}}
+            <div class="pictureModal" onclick="hiddenModal()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="contentImg">
+                            <img class='img' src="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="modalDescription">
+                            <h6 class="pictureTitle">Tytuł obrazka</h6>
+                            <p class="pictureDescription">Opis obrazka.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
             
 
         </main>

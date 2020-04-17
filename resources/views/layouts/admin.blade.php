@@ -16,9 +16,9 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap&subset=latin-ext');
-    </style> 
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

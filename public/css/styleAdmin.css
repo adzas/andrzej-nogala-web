@@ -139,4 +139,28 @@ a{
  .sortable-item-horizontal {
     list-style-type: none;
     float:left;
+    position: relative;
+}
+
+.icon-draving{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #333;
+    margin: auto;
+    color: #fff;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.sortable-item-horizontal:hover > .icon-draving{
+    opacity: .7;
 }

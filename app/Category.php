@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
@@ -13,6 +14,6 @@ class Category extends Model
 
     public function pictures()
     {
-        return $this->belongsToMany('App\Picture', 'picture_category', 'pictures_id', 'category_id');
+        return $this->belongsToMany('App\Picture', 'picture_category', 'category_id', 'pictures_id')->orderBy('order');
     }
 }
