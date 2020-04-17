@@ -21,9 +21,23 @@ $(function(){
                 order[k] = $(this).attr('data-id');
                 k++;
             });
+
             /**
              * Skrypt wysyłający dane do bazy przez ajax
              */
+            $.ajax({
+                url: 'ajaxChangeOrderPictures',
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    order,
+                },
+                success: function(res) {
+                    console.log(res);
+                }
+            });
         }
     });
 })

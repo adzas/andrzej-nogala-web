@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::post('/ajaxIndex', 'AjaxController@index');
 Route::post('/ajaxGallery', 'AjaxController@gallery');
+Route::post('/ajaxChangeOrderPictures', 'AjaxController@orderPictures');
 
 Route::resource('pictures','PictureController')->middleware('auth');
 Route::resource('about','AboutController')->middleware('auth');

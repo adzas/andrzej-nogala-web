@@ -15,9 +15,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap&subset=latin-ext');
-    </style> 
+    {{-- Search in https://fontawesome.com/v4.7.0/icons/ --}}
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
     <!-- ajax -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

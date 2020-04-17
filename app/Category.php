@@ -14,6 +14,6 @@ class Category extends Model
 
     public function pictures()
     {
-        return $this->belongsToMany('App\Picture', 'picture_category', 'category_id', 'pictures_id');
+        return $this->belongsToMany('App\Picture', 'picture_category', 'category_id', 'pictures_id')->orderBy('order');
     }
 }

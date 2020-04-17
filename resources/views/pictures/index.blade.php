@@ -24,6 +24,9 @@
         <ul id="sortableHorizontal">
         @foreach ($pictures as $key => $picture)
             <li data-order="{{$key}}" data-id="{{ $picture->id }}" class="sortable-item-horizontal">
+                <span class="icon-draving"> 
+                    <i class="fa fa-exchange" aria-hidden="true"></i>    
+                </span>
                 <a
                     href="{{ action('PictureController@show', $picture->id) }}"
                     class='myPicture m-1 float-left'

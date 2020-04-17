@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class AjaxController extends Controller
 {
     /**
-     * Funkcja odpowiadająca za wyświetlanie głównych pozycji w menu
+     * Funkcja odpowiadająca za wyświetlanie głównych pozycji w menu w widoku gości
      */
     public function index(Request $request) {
         $content = $request->only('param');
@@ -26,7 +26,7 @@ class AjaxController extends Controller
 
             case 'gallery':
                 $categories = Category::select('name', 'id')->orderBy('order')->get();
-                $pictures = Picture::take(16)->get();
+                $pictures = Picture::select('file', 'id')->orderBy('order')->limit(16)->get();
                 return view('ajaxViews.gallery', compact('pictures', 'categories'));
             
             default:
@@ -46,5 +46,18 @@ class AjaxController extends Controller
         $category = Category::find($tag)->first();
         $pictures = $category->pictures;
         return view('ajaxViews.gallery', compact('pictures', 'categories', 'tag'));
+    }
+
+
+    /**
+     * funkcja zapisująca kolejność zdjęć w galerii
+     */
+    public function orderPictures(Request $request)
+    {
+        foreach ($request->input('order') as $order => $id) {
+            $picture = Picture::find($id);
+            $picture->order = $order;
+            $picture->save();
+        }
     }
 }
