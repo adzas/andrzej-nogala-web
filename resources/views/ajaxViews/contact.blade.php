@@ -1,5 +1,5 @@
 
-<div class="contactSection">
+<div class="contactSection max-500">
     <div class="row">
         <div class="col-md-12 text-justify">
 

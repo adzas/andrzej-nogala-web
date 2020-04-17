@@ -39,25 +39,26 @@ const App = {
     },
     modal:{
         id: $('.pictureModal'),
+        description: $('.pictureDescription'),
+        title: $('.pictureTitle'),
         show: function(id){
 
             const src = $('#img-' + id).attr('src');
-            const alt = $('#img-' + id).attr('alt');
-            console.log(src);
+            const title = $('#img-' + id).attr('data-title');
+            const description = $('#img-' + id).attr('data-description');
 
             this.id.find('.img')
-                /* .css('background-image', 'url("' + src + '")') */
                 .attr('src', src)
                 .css('padding', '50px 10px 10px 10px');
-                
-                this.id.css('z-index', '100');
-            },
+            this.title.html(title);
+            this.description.html(description);
+            this.id.css('z-index', '100');
+        },
         hidden: function(){
                 
             this.id.find('.img')
-                /* .css('background-image', '') */
                 .attr('src', '')
-                .css('padding', '1000px');
+                .css('padding', '500px');
 
             this.id.css('z-index', '-100');
         }
@@ -96,7 +97,7 @@ $(function(){
     App.title.moveDown();
     App.picture.show();
     App.navbar.show();
-    changeContent('gallery');
+    //changeContent('about');
 });
 
 function moveTitle() {

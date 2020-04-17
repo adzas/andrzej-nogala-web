@@ -37,7 +37,7 @@
                 Andrzej Nogala
             </h3>
 
-            <p class="navbar">
+            <p class="navbar max-500">
                 <a href="#" onclick="changeContent('about')" data-content="about" class="navbarlinks">O mnie</a>
                 <span class="separator"> | </span>
                 <a href="#" onclick="changeContent('gallery')" data-content="gallery" class="navbarlinks">Galeria</a>
@@ -55,9 +55,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="contentImg">
-                            {{-- <img class='img' src="../storage/app/example/5lFDomRaOXgLmyL46NDIbi1koyQ62S5MDsAfk9CM.jpeg"> --}}
                             <img class='img' src="">
-                            {{-- style="background-image: url(../storage/app/example/5lFDomRaOXgLmyL46NDIbi1koyQ62S5MDsAfk9CM.jpeg)" --}} 
                         </div>
                     </div>
                 </div>
@@ -65,7 +63,7 @@
                     <div class="col-md-12">
                         <div class="modalDescription">
                             <h6 class="pictureTitle">Tytuł obrazka</h6>
-                            <p class="pictureDescription">Opis obrazka coś tam trzeba napisać i wyświetlić. No trudno.</p>
+                            <p class="pictureDescription">Opis obrazka.</p>
                         </div>
                     </div>
                 </div>

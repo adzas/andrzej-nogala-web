@@ -41,10 +41,10 @@ class AjaxController extends Controller
      */
     public function gallery(Request $request)
     {
-        $id = $request->only('id');
+        $tag = $request->only('id');
         $categories = Category::select('name', 'id')->orderBy('order')->get();
-        $category = Category::find($id)->first();
+        $category = Category::find($tag)->first();
         $pictures = $category->pictures;
-        return view('ajaxViews.gallery', compact('pictures', 'categories'));
+        return view('ajaxViews.gallery', compact('pictures', 'categories', 'tag'));
     }
 }

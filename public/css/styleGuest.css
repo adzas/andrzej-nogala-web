@@ -9,6 +9,17 @@ body, html {
     height: 100vh;
 }
 
+@media(min-width: 1024px)
+{
+    .container-fluid {
+        position: relative;
+        width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100vh;
+    }
+}
+
 .myPicture {
     width: 150px;
     position: relative;
@@ -36,6 +47,12 @@ body, html {
     transition: opacity 1s ease-in-out;
 }
 
+.max-500{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .navbarlinks {
     color: #eee;
 }
@@ -50,7 +67,6 @@ body, html {
 
 .contentSection {
     padding: 5px 10px 5px 10px;
-    text-align: justify;
     margin-top: 80px;
     opacity: 0;
 
@@ -80,6 +96,8 @@ body, html {
     
 .category {
     color: #aaa;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .category:hover {
@@ -115,7 +133,9 @@ body, html {
     margin: auto;
     left: 0;
     right: 0;
-    width: 400px;
+    width: auto;
+    max-height: 80vh;
+    padding: 500px;
 
     background-repeat: no-repeat;
     background-position: 50% 8%;
@@ -124,6 +144,27 @@ body, html {
     display: block;
 
     transition: padding 1s ease-in-out;
+}
+
+@media(max-width: 720px)
+{
+    
+    .img {
+        margin: auto;
+        left: 0;
+        right: 0;
+        height: auto;
+        max-width: 100%;
+
+        background-repeat: no-repeat;
+        background-position: 50% 8%;
+        background-attachment: fixed;
+        background-size: 400px;
+        display: block;
+
+        transition: padding 1s ease-in-out;
+    }
+
 }
 
 .modalDescription {
