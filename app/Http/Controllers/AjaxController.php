@@ -26,7 +26,7 @@ class AjaxController extends Controller
 
             case 'gallery':
                 $categories = Category::select('name', 'id')->orderBy('order')->get();
-                $pictures = Picture::select('file', 'id')->orderBy('order')->limit(16)->get();
+                $pictures = Picture::select()->orderBy('order')->limit(16)->get();
                 return view('ajaxViews.gallery', compact('pictures', 'categories'));
             
             default:

@@ -132,6 +132,17 @@ a{
     color: black;
 }
 
+#sortable{
+    position: relative;
+}
+
+.sortable-item::after{
+    font-family: FontAwesome;
+    content: '\f142';
+    position: absolute;
+    right: 10px;
+}
+
 
 /**
  * Sortable horizontal
