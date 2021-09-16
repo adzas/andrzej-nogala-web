@@ -26,7 +26,7 @@
                 <img 
                     id="img-{{ $img->id }}"
                     class="pictures" 
-                    src="{{ $img->getFileLink('../') }}" 
+                    src="{{ asset($img->file) }}" 
                     alt="{{ $img->alt }}" 
                     data-description="{{ $img->description }}"
                     data-title="{{ $img->name }}"

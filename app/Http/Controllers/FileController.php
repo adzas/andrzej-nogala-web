@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Picture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,31 +15,30 @@ class FileController extends Controller
         /**
          * Dodaje plik do galerii
          */
-        $path = Storage::put('gallery', $request->file('file'));
-        return $path;
+        if ($request->hasFile('file')) {
+            return Storage::disk('public')->put('gallery', $request->file);
+        }
+
+        return false;
     }
     
     /**
      * Aktualizuje zdjęcie lub zwraca wartość ścieżki zdjęcia z przed akrualizacji
      */
-    public static function update($file, Request $request)
+    public static function update($file = null, Request $request): string
     {
-        $newFile = $request->file('file');
-        if($newFile != null)
-        {
-            $path = Storage::put('gallery', $newFile);
-            if($file != null)
-            {
-                Storage::delete($file);
-            }
-        }
-        elseif($file != null)
-        {
+        $path = '';
+        if($file != null) {
             $path = $file;
         }
-        else
+        if($request->hasFile('file'))
         {
-            return false;
+            $newPath = self::store($request);
+            if(false != $newPath)
+            {
+                $file->delete();
+                $path = $newPath;
+            }
         }
 
         return $path;
