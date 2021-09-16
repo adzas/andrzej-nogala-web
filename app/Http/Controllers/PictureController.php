@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Session;
 use App\Category;
 use App\Picture;
 use App\Http\Controllers\FileController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CreatePictureRequest;
 use App\Http\Requests\EditPictureRequest;
+use Exception;
 
 class PictureController extends Controller
 {    
@@ -47,6 +45,9 @@ class PictureController extends Controller
     public function store(CreatePictureRequest $request)
     {
         $path = FileController::store($request);
+        if (false == $path) {
+            new Exception('Błąd: brak ścieżki pliku.');
+        }
         $picture = new Picture;
         $picture->name = $request->input('name');
         $picture->order = $request->input('order');
@@ -56,8 +57,8 @@ class PictureController extends Controller
         $picture->save();
         $categoryList = $request->input('categories');
         $picture->categories()->attach($categoryList);
-        $pictures = Picture::all();
-        return view('pictures.index')->with('pictures', $pictures);
+
+        return view('pictures.index')->with('pictures', Picture::all());
     }
 
     /**
@@ -73,7 +74,8 @@ class PictureController extends Controller
         $picture->save();
         $categoryList = $request->input('categories');
         $picture->categories()->sync($categoryList);
-        Session::flash('result_edit_picture', 'Poprawnie zaktualizowano dane');
+        session(['result_edit_picture' => 'Poprawnie zaktualizowano dane']);
+
         return redirect(url("pictures/{$picture->id}/edit"));
     }
     
@@ -87,7 +89,8 @@ class PictureController extends Controller
     {
         $picture = Picture::find($id);
         $picture->delete();
-        Session::flash('result_picture_remove', 'Usunięto zdjęcie');
+        session(['result_picture_remove' => 'Usunięto zdjęcie']);
+
         return redirect('pictures');
     }
 }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Session;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateCategoryRequest;
@@ -65,7 +64,8 @@ class CategoryController extends Controller
     public function update($id, Request $request)
     {
         $category = Category::find($id);
-        Session::flash('reault_category_update', 'Zaktualizowano wpis.');
+        session(['reault_category_update' => 'Zaktualizowano wpis.']);
+
         return $category->update($request->all());
     }
     
@@ -89,7 +89,8 @@ class CategoryController extends Controller
             $cat->order = $key;
             $cat->save();
         }
-        Session::flash('result_order_category_update', 'Zaktualizowano kolejność kategorii.');
+        session(['result_order_category_update' => 'Zaktualizowano kolejność kategorii.']);
+
         return $this->index();
     }
 }
