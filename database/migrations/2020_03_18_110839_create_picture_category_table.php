@@ -15,10 +15,8 @@ class CreatePictureCategoryTable extends Migration
     {
         Schema::create('picture_category', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('pictures_id');
-            $table->foreign('pictures_id')->references('id')->on('pictures')->onDelete('cascade');
-            $table->integer('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->integer('pictures_id')->constrained('pictures')->onDelete('cascade');
+            $table->integer('category_id')->constrained('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
