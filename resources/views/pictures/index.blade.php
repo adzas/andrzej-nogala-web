@@ -27,13 +27,16 @@
                 <span class="icon-draving"> 
                     <i class="fa fa-exchange" aria-hidden="true"></i>    
                 </span>
-                <img
-                    style="width:300px"
-                    src="{{ asset($picture->file) }}"
-                    alt="{{ $picture->alt }}"
-                    href="{{ action('PictureController@show', $picture->id) }}"
-                    id="pictureId{{ $picture->id }}" 
-                />
+                <a href="{{ action('PictureController@show', $picture->id) }}">
+                    <div class="img-box">
+                        <img
+                            src="{{ asset($picture->file) }}"
+                            alt="{{ $picture->alt }}"
+                            href="{{ action('PictureController@show', $picture->id) }}"
+                            id="pictureId{{ $picture->id }}" 
+                        />
+                    </div>
+                </a>
             </li>
         @endforeach
         </ul>

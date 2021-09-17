@@ -153,6 +153,18 @@ a{
     position: relative;
 }
 
+.img-box {
+    height: 100px;
+    margin: 5px;
+    min-width: 50px;
+    background-color: #ccc;
+}
+
+.img-box > img {
+    width: auto;
+    height: 100%;
+}
+
 .icon-draving{
     position: absolute;
     top: 0;
