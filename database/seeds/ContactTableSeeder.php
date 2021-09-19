@@ -15,7 +15,7 @@ class ContactTableSeeder extends Seeder
         return Contact::create([
             'email' => 'nogala.andrzej@gmail.com',
             'fb' => 'https://www.facebook.com/nogala.andrzej/',
-            'insta' => 'https://www.instagram.com/adzas_art/',
+            'insta' => 'https://www.instagram.com/andrzej_nogala/',
             'twitter' => '',
             'snapchat' => '',
             'youtube' => '',
