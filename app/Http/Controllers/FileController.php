@@ -36,7 +36,7 @@ class FileController extends Controller
             $newPath = self::store($request);
             if(false != $newPath)
             {
-                $file->delete();
+                Storage::disk('public')->delete($file);
                 $path = $newPath;
             }
         }

@@ -8,6 +8,7 @@ use App\Http\Controllers\FileController;
 use App\Http\Requests\CreatePictureRequest;
 use App\Http\Requests\EditPictureRequest;
 use Exception;
+use Illuminate\Support\Facades\Storage;
 
 class PictureController extends Controller
 {    
@@ -88,8 +89,12 @@ class PictureController extends Controller
     public function destroy($id)
     {
         $picture = Picture::find($id);
-        $picture->delete();
-        session(['result_picture_remove' => 'Usunięto zdjęcie']);
+        if ($picture->delete()) {
+            Storage::disk('public')->delete($picture->file);
+            session(['result_picture_remove' => 'Usunięto zdjęcie']);
+        } else {
+            session(['result_picture_remove' => 'Niestety nie udało się wykonac operacji. Spróbuj później.']);
+        }
 
         return redirect('pictures');
     }

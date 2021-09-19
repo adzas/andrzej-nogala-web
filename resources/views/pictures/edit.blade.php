@@ -23,7 +23,7 @@
 
         <div class="col-4 pb-4">
             <div class="pictureBox">
-                <img src="{{ $picture->getFileLink('../../../') }}" alt="{{ $picture->alt }}" width="300" />
+                <img src="{{ asset($picture->file) }}" alt="{{ $picture->alt }}" width="300" />
             </div>
         </div>
         <div class="col-sm-8">
