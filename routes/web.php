@@ -12,8 +12,8 @@
 */
 
 Route::get('/admin', 'AdminController@home');
-
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('get-oauth-token','OAuth2Controller@getToken');
 
 Route::post('/ajaxIndex', 'AjaxController@index');
 Route::post('/ajaxGallery', 'AjaxController@gallery');

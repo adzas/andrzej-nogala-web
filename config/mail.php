@@ -133,4 +133,10 @@ return [
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
 
+    'oauth2_gmail' => [
+        'redirect' => env('MAIL_REDIRECT'),
+        'clientId' => env('MAIL_CLIENT_ID'),
+        'clientSecret' => env('MAIL_CLIENT_SECTER'),
+    ],
+
 ];
